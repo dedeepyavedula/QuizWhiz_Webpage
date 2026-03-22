@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizWhiz Main page</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+    <style>
+       
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+        /* Container to keep content centered */
+        .page-container {
+            width: 100%;
+            max-width: 1200px; /* Adjust based on your layout */
+            padding: 40px;
+            box-sizing: border-box;
+            position: relative; /* Base for relative positioning of children */
+        }
+
+      
+        /* Logo Banner (White) */
+        .white-banner {
+            background-color: black;
+            width: 100vw;         
+            padding: 60px 0;       
+            margin-top: 80px;      
+            display: flex;
+            align-items: center;   
+        }
+        
+        .logo-banner {
+            background-color: #ffffff;
+            width: 100%;
+            padding: 30px 60px;
+            box-sizing: border-box;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+            position: relative;
+            z-index: 10; 
+            margin-bottom: 30px; 
+        }
+
+        
+        .logo-text {
+            color: white; 
+            font-size: 64px; 
+            font-weight: 700;
+            margin: 0;
+            text-align: left; 
+        }
+
+        
+        /*Text Paragraph*/
+        
+        .highlight-text{
+            color: darkblue; 
+            background-color:white; 
+            font-size: 20px;
+            line-height: 1.6;
+            padding: 10px 15px; 
+            display: inline-block;
+        }
+
+        
+        .paragraph-container {
+            width: 100%;
+            max-width: 800px; 
+            margin: 0 auto; 
+            text-align: center; 
+            position: relative;
+            z-index: 5; 
+        }
+
+    </style>
+</head>
+<body class="bg-[#5A5CF6]">
+
+<header> 
+  <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+    <div class="flex lg:flex-1">
+      <a href="#" class="-m-1.5 p-1.5">
+        <span class="sr-only">Y Company</span>
+        <img src="QW_logo2.png" alt="Logo" class="h-10 w-auto" />
+      </a>
+    </div>
+    
+    <div class="flex lg:hidden">
+      <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400">
+        <span class="sr-only">Open main menu</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6">
+          <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+
+    <el-popover-group class="hidden lg:flex lg:gap-x-12">
+      <div class="relative">
+        <button popovertarget="desktop-menu-product" class="flex items-center gap-x-1 text-sm/6 font-semibold text-white">
+          Product
+          <svg viewBox="0 0 20 20" fill="currentColor" class="size-5 flex-none text-gray-500">
+            <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+        </button>
+
+        <el-popover id="desktop-menu-product" anchor="bottom" popover class="w-screen max-w-md overflow-hidden rounded-3xl bg-gray-800 outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:theme(spacing.3)] backdrop:bg-transparent open:block">
+          <div class="p-4">
+            <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-white/5">
+              <div class="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-700/50 group-hover:bg-gray-700">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6 text-gray-400 group-hover:text-white">
+                  <path d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="flex-auto">
+                <a href="#" class="block font-semibold text-white">Analytics</a>
+                <p class="mt-1 text-gray-400">Get a better understanding of your traffic</p>
+              </div>
+            </div>
+            </div>
+        </el-popover>
+      </div>
+
+      <a href="#" class="text-sm/6 font-semibold text-white">Features</a>
+      <a href="#" class="text-sm/6 font-semibold text-white">Marketplace</a>
+      <a href="#" class="text-sm/6 font-semibold text-white">Company</a>
+    </el-popover-group>
+
+    <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+      <a href="Login_page.html" class="text-sm/6 font-semibold text-white">Log in <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </nav>
+
+  <el-dialog>
+    <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+      <div tabindex="0" class="fixed inset-0 focus:outline-none">
+        <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 p-6 sm:max-w-sm">
+          <div class="flex items-center justify-between">
+            <a href="#" class="-m-1.5 p-1.5">
+              <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="Logo" class="h-8 w-auto" />
+            </a>
+            <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-400">
+              <span class="sr-only">Close menu</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6">
+                <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-white/10">
+              <div class="space-y-2 py-6">
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Features</a>
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Marketplace</a>
+              </div>
+            </div>
+          </div>
+        </el-dialog-panel>
+      </div>
+    </dialog>
+  </el-dialog>
+</header>
+    <div class="white-banner">
+        <h1 class="logo-text">QuizWhiz</h1>
+    </div>
+
+    <div class="paragraph-container">
+        <div style="text-align: center; max-width: 900px;">
+            <p class="highlight-text">
+                QuizWhiz is a dynamic, entry-level platform designed specifically for aspiring developers to test and solidify their foundational coding knowledge. Tailored for beginners, the site offers a curated selection of interactive quizzes covering the "Big Three" of software development: C++, Python, and Java alongside essential Web Development modules like HTML and CSS. Each quiz is structured to reinforce core concepts such as syntax, loops, and data types in a low-pressure environment, making it an ideal pitstop for students looking to "debug" their understanding before moving on to complex projects. With its clean, high-tech aesthetic and focus on clarity, QuizWhiz transforms the often-intimidating first steps of a computer science journey into an engaging, gamified experience.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
