@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login_style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form_container">
+            <form id="loginForm">
+                <div class="title">
+                    <h2>QuizWhiz Login</h2>
+                </div>
+                
+                <div class="input_group">  
+                    <label for="username">Username:</label> 
+                    <input type="text" id="username" required>
+                </div>
+                <br><br>
+                
+                <div class="input_group">
+                    <label for="password">Password:</label> 
+                    <input type="password" id="password" required>
+                    <br><br>
+                    <input type="checkbox" id="rememberMe">
+                    <label for="rememberMe">Remember Me</label> 
+                </div>
+                
+                <p id="errorMessage" style="color: red; display: none; margin-top: 10px;">
+                    Invalid username or password.
+                </p>
+                
+                <br><br>
+                <button type="submit" class="login_btn">LOGIN</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            // Prevents the default form submission (which refreshes the page)
+            event.preventDefault(); 
+
+            // Grab the values entered by the user
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            const errorMsg = document.getElementById('errorMessage');
+
+            // Hardcoded validation for demonstration purposes
+            // Replace 'admin' and 'password123' with your desired test credentials
+            if (user === 'admin' && pass === 'password123') {
+                
+                // Hide the error message if it was previously visible
+                errorMsg.style.display = 'none';
+                
+                // Redirect to the next webpage (make sure this file exists in your repository)
+                window.location.href = 'quiz_options.html'; 
+                
+            } else {
+                // Display the error message
+                errorMsg.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

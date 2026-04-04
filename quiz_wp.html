@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizWhiz</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1>QuizWhiz</h1>
+    <div class="quiz-section">
+        <div id="quiz">
+            <div id="timer-display">Time Left: <span id="time">10</span>s</div>
+            <h2 class="question" id="question">Question text goes here</h2>
+            <hr/>
+            <ul>
+                <li> 
+                    <input type="radio" name="ans" class="ans" id="a"> 
+                    <label for="a" id="opt1">Option 1</label>
+                </li>
+                <li>
+                    <input type="radio" name="ans" class="ans" id="b"> 
+                    <label for="b" id="opt2">Option 2</label>
+                </li>
+                <li>
+                    <input type="radio" name="ans" class="ans" id="c"> 
+                    <label for="c" id="opt3">Option 3</label>
+                </li>
+                <li>
+                    <input type="radio" name="ans" class="ans" id="d"> 
+                    <label for="d" id="opt4">Option 4</label>
+                </li>
+            </ul>
+            <hr/>
+            <div class="btn">
+                <button type="submit" id="submit">Submit Answer</button>
+            </div>
+        </div>
+    </div>
+    <script src="script2.js"></script>
+</body>
+</html>

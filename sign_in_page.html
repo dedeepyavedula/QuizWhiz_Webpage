@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizWhiz - Sign Up</title>
+    <link rel="stylesheet" href="login_style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form_container">
+            <form id="signupForm">
+                <div class="title">
+                    <h2>Create Account</h2>
+                </div>
+                
+                <div class="input_group">  
+                    <label for="newUsername">Choose Username:</label> 
+                    <input type="text" id="newUsername" required>
+                </div>
+                <br><br>
+                
+                <div class="input_group">
+                    <label for="newPassword">Choose Password:</label> 
+                    <input type="password" id="newPassword" required>
+                </div>
+                
+                <p id="statusMessage" style="display: none; margin-top: 10px; font-weight: bold;"></p>
+                
+                <br><br>
+                <button type="submit" class="login_btn">SIGN UP</button>
+                <br><br>
+                <a href="new_login.html">Already have an account? Login here.</a>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const user = document.getElementById('newUsername').value;
+            const pass = document.getElementById('newPassword').value;
+            const statusMsg = document.getElementById('statusMessage');
+
+            // Send new credentials to the Node.js server
+            fetch('http://localhost:3000/signup', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username: user, password: pass })
+            })
+            .then(response => response.json())
+            .then(data => {
+                statusMsg.style.display = 'block';
+                
+                if (data.success) {
+                    statusMsg.style.color = 'green';
+                    statusMsg.innerText = "Account created! Redirecting to login...";
+                    
+                    // Wait 1.5 seconds so the user can read the success message, then redirect
+                    setTimeout(() => {
+                        window.location.href = 'login.html';
+                    }, 1500);
+                    
+                } else {
+                    statusMsg.style.color = 'red';
+                    statusMsg.innerText = data.message; // e.g., "Username already exists"
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
