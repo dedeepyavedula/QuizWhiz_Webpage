@@ -14,8 +14,10 @@ CREATE TABLE IF NOT EXISTS users (
 # RESULTS TABLE
 c.execute('''
 CREATE TABLE IF NOT EXISTS results (
-    name TEXT PRIMARY KEY,
-    score INTEGER
+    username TEXT,
+    quiz_name TEXT,
+    score INTEGER,
+    PRIMARY KEY (username, quiz_name)
 )
 ''')
 
