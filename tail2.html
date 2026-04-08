@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizWhiz Main page</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+      body {
+          font-family: 'Inter', sans-serif;
+      }
+
+      /* Container to keep content centered */
+      .page-container {
+          width: 100%;
+          max-width: 1200px; 
+          padding: 40px;
+          box-sizing: border-box;
+          position: relative; 
+      }
+      
+      /* Hero Heading Style matching the screenshot */
+      .hero-heading {
+          font-size: 64px;
+          font-weight: 800; /* Extra bold to match the screenshot's impact */
+          color: #ffffff;
+          line-height: 1.05;
+          letter-spacing: -0.03em;
+          margin: 0 0 24px 0;
+          text-align: left;
+      }
+
+      /* Make it responsive for smaller screens */
+      @media (max-width: 768px) {
+          .hero-heading {
+              font-size: 48px;
+          }
+      }
+        
+      /*Text Paragraph*/
+      .highlight-text{
+          color: #9ca3af; /* Gray accent color matching the screenshot */
+          background-color: transparent; 
+          font-size: 18px;
+          line-height: 1.7;
+          padding: 10px 0; 
+          display: inline-block;
+          text-align: left;
+      }
+
+      .paragraph-container {
+          width: 100%;
+          max-width: 650px; /* Constrained width to mimic the left-aligned hero section */
+          margin: 60px auto; 
+          margin-left: 5%; 
+          text-align: left; 
+          position: relative;
+          z-index: 5; 
+      }
+    </style>
+</head>
+<body class="bg-[#0b0c10] text-white">
+
+<header> 
+  <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+    <div class="flex lg:flex-1">
+      <a href="#" class="-m-1.5 p-1.5">
+        <span class="sr-only">Y Company</span>
+        <img src="QW_logo2.png" alt="Logo" class="h-10 w-auto" />
+      </a>
+    </div>
+    
+    <div class="flex lg:hidden">
+      <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400">
+        <span class="sr-only">Open main menu</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6">
+          <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+
+    <el-popover-group class="hidden lg:flex lg:gap-x-12">
+      <div class="relative">
+        <button popovertarget="desktop-menu-product" class="flex items-center gap-x-1 text-sm/6 font-semibold text-gray-300 hover:text-white transition-colors">
+          Product
+          <svg viewBox="0 0 20 20" fill="currentColor" class="size-5 flex-none text-gray-500">
+            <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+        </button>
+
+        <el-popover id="desktop-menu-product" anchor="bottom" popover class="w-screen max-w-md overflow-hidden rounded-3xl bg-[#1a1b23] outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:theme(spacing.3)] backdrop:bg-transparent open:block">
+          <div class="p-4">
+            <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-white/5">
+              <div class="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-800/50 group-hover:bg-gray-800">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6 text-gray-400 group-hover:text-white">
+                  <path d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="flex-auto">
+                <a href="#" class="block font-semibold text-white">Analytics</a>
+                <p class="mt-1 text-gray-400">Get a better understanding of your traffic</p>
+              </div>
+            </div>
+            </div>
+        </el-popover>
+      </div>
+
+      <a href="features.html" class="text-sm/6 font-semibold text-gray-300 hover:text-white transition-colors">Features</a>
+      <a href="#" class="text-sm/6 font-semibold text-gray-300 hover:text-white transition-colors">Marketplace</a>
+      <a href="Contact_page.html" class="text-sm/6 font-semibold text-gray-300 hover:text-white transition-colors">Contact Us</a>
+    </el-popover-group>
+
+    <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+      <a href="sign_in_page.html" class="text-sm/6 font-semibold text-black bg-white px-5 py-2.5 rounded-lg hover:bg-gray-200 transition-colors">Sign in / Login <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </nav>
+
+  <el-dialog>
+    <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+      <div tabindex="0" class="fixed inset-0 focus:outline-none">
+        <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-[#0b0c10] p-6 sm:max-w-sm">
+          <div class="flex items-center justify-between">
+            <a href="#" class="-m-1.5 p-1.5">
+              <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="Logo" class="h-8 w-auto" />
+            </a>
+            <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-400">
+              <span class="sr-only">Close menu</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6">
+                <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-white/10">
+              <div class="space-y-2 py-6">
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-300 hover:bg-white/5">Features</a>
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-300 hover:bg-white/5">Marketplace</a>
+              </div>
+            </div>
+          </div>
+        </el-dialog-panel>
+      </div>
+    </dialog>
+  </el-dialog>
+</header>
+
+    <div class="paragraph-container">
+        <div style="text-align: left; max-width: 100%;">
+            <h1 class="hero-heading">The Beginner-First<br>Quiz Platform</h1>
+            
+            <p class="highlight-text">
+                Test and solidify your coding foundations with interactive quizzes tailored for aspiring developers. Master core concepts across C++, Python, Java, HTML, and CSS in a low-pressure, gamified environment—the perfect place to "debug" your knowledge before tackling complex projects.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

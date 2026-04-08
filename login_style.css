@@ -1,88 +1,76 @@
-
-/*FONT*/
+/* FONT */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-body{
-   
-    background-color: #5A5CF6;
+body {
+    background-color: #000000; /* Black background */
+    font-family: 'Montserrat', sans-serif;
+    color: #a9a9a9; /* Grey accent text for anything outside the card */
+    margin: 0;
 }
 
-.logo{
+.logo {
     display: flex;
-    justify-content: top left;
-    margin bottom: 20px,
+    justify-content: flex-start; /* Fixed invalid 'top left' */
+    margin-bottom: 20px; /* Fixed syntax error */
 }
+
 /* main container */
-.container{
+.container {
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 20px
 }
 
 /* form box */
-.form_container{
-    background-color: white;
-    padding: 30px;
-    width: 300px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px gray;
-    margin: 0 auto;}
 .form_container {
-    /* 1. Turn on Flexbox */
     display: flex;
-    
-    /* 2. Stack the items top-to-bottom instead of side-by-side */
     flex-direction: column; 
-    
-    /* 3. Perfectly center the items horizontally (left to right) */
     align-items: center; 
-    
-    /* Optional: Adds even spacing between the username and the button */
     gap: 20px; 
-    
-    /* Basic card styling from your image */
-    background-color: white;
+    background-color: #ffffff; /* White card aesthetic */
+    color: #333333; /* Dark text for readability on the white card */
     padding: 40px 20px;
     width: 300px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px gray;
+    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.05); /* Soft, subtle shadow for dark mode */
     margin: 0 auto; 
 }
 
-/* Ensure the input and button take up the same balanced width inside the container */
+/* Ensure the input and button take up the same balanced width */
 .input_group, .login_btn {
-    width: 90%; /* Leaves a nice even 7.5% margin on the left and right */
+    width: 90%; 
     display: flex;
-    flex-direction: column; /* Stacks the label text directly above the input box */
+    flex-direction: column; 
 }
 
+/* title */
+.title {
+    text-align: center;
+    margin-bottom: 0; /* Gap property in form_container handles the spacing now */
+    color: #000000; /* Black heading */
+}
+
+/* remember checkbox */
+.remember {
+    align-self: flex-start; /* Align to the left inside the flex column */
+    margin-left: 5%; /* Matches the 90% width indentation */
+    font-size: 0.9rem;
+}
+
+/* button */
 .login_btn {
-    background-color: #0c47a8; /* Blue color from your image */
-    color: white;
-    border: none;
+    background-color: #e0e0e0; /* Grey background */
+    color: #000000; /* Black text */
+    border: 2px solid #000000; /* Black border */
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+    transition: background-color 0.2s ease;
 }
 
-
-/* title */
-.title{
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* remember checkbox */
-.remember{
-    margin-bottom: 15px;
-}
-/* button */
-
-
-button:hover{
-    background-color: #0056b3;
+.login_btn:hover {
+    background-color: #cccccc; /* Darker grey on hover */
 }

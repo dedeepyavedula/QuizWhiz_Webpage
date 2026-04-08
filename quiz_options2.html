@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizWhiz | Master Your Skills</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+        :root {
+            --bg-color: #000000; /* Black background */
+            --text-accent: #a9a9a9; /* Grey accents for main text */
+            --heading-color: #ffffff; /* White for main headings */
+        }
+
+        body {
+            font-family: 'Montserrat','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            color: var(--text-accent);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Top white header */
+        header {
+            background: white;
+            color: #333;
+            padding: 1rem 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 6px rgba(255,255,255,0.05);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            height: 120px;
+            width: 120px;
+            margin-right: 15px;
+        }
+        
+        .logo-container h1 {
+            margin: 0;
+        }
+
+        /* Top Right Button */
+        .header-btn {
+            display: inline-block;
+            background: #000000;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+        }
+
+        .header-btn:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            font-size: larger;
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--heading-color);
+        }
+
+        .hero p {
+            color: var(--text-accent);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            flex-grow: 1;
+        }
+
+        /* Updated Card Styles */
+        .quiz-card {
+            background: #ffffff; /* Changed to white */
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 20px rgba(255,255,255,0.05); /* Softened shadow */
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            color: #333333; /* Dark grey text for readability on white */
+        }
+
+        .quiz-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .quiz-card h2 {
+            color: #000000; /* Black heading */
+            border-bottom: 2px solid #e0e0e0; /* Light grey accent line */
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .quiz-card ul, .quiz-card p {
+            line-height: 1.6;
+            font-size: 0.95rem;
+            flex-grow: 1;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .quiz-card li {
+            margin-bottom: 10px;
+        }
+
+        /* Updated Button Styles */
+        .btn {
+            display: inline-block;
+            background: #e0e0e0; /* Grey background */
+            color: #000000; /* Black text */
+            border: 2px solid #000000; /* Black border */
+            text-align: center;
+            padding: 10px 12px; /* Adjusted slightly to account for border thickness */
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: auto; 
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background: #cccccc; /* Darker grey on hover */
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-accent);
+            font-size: 0.9rem;
+            border-top: 1px solid #222;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="QW_logo.png" alt="QuizWhiz Logo">
+            <h1>QuizWhiz</h1>
+        </div>
+        <div>
+            <a href="results.html" class="header-btn">View Results</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome, Quiz Wizard!</h1>
+        <p>Test your knowledge across the most popular programming domains.</p>
+    </section>
+
+    <div class="container">
+        <div class="quiz-card">
+            <h2>JAVA</h2>
+            <ul>
+                <li>A high-level, class-based, object-oriented programming language.</li>
+                <li>Designed to minimize implementation dependencies for better portability.</li>
+                <li>A staple language for enterprise applications, large-scale backend systems, and Android mobile development.</li>
+                <li>Known for robust memory management and strong security features.</li>
+            </ul>
+            <a href="quiz_java.html" class="btn">Start Java Quiz</a>
+        </div>
+
+        <div class="quiz-card">
+            <h2>PYTHON</h2>
+            <ul>
+                <li>An interpreted, high-level, general-purpose programming language.</li>
+                <li>Known for emphasizing code readability and simplicity through its syntax.</li>
+                <li>The leading choice for data science, artificial intelligence, and machine learning, thanks to its extensive libraries.</li>
+                <li>Widely used for web automation, scripting, and rapid application development.</li>
+            </ul>
+            <a href="quiz_py.html" class="btn">Start Python Quiz</a>
+        </div>
+
+        <div class="quiz-card">
+            <h2>WEB DEV</h2>
+            <ul>
+                <li>The "Big Three" Technologies:
+                    <ol>
+                        <li>HTML: Used for defining the structure and content of a page.</li>
+                        <li>CSS: Used for styling, design, and layout.</li>
+                        <li>JavaScript: Used for adding interactivity and dynamic behavior.</li>
+                    </ol>
+                </li>
+                <li>User Experience: Focuses on responsive design to ensure sites work flawlessly across all devices and screen sizes.</li>
+            </ul>
+            <a href="quiz_wp.html" class="btn">Start Web Dev Quiz</a>
+        </div>
+
+        <div class="quiz-card">
+            <h2>C++</h2>
+            <ul>
+                <li>A powerful, high-performance language, extending C with object-oriented features.</li>
+                <li>Provides low-level memory manipulation capabilities for fine-grained resource control.</li>
+                <li>The industry standard for systems programming and game development.</li>
+                <li>Heavily used in performance-critical applications like the Unreal Engine and high-frequency trading.</li>
+            </ul>
+            <a href="quiz_c++.html" class="btn">Start C++ Quiz</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 QuizWhiz Team. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
